@@ -117,7 +117,7 @@
     const formMessage = document.getElementById('formMessage');
     formMessage.style.display = 'none';
     
-    emailjs.sendForm('service_frbvtzh', 'template_2ngss4f', this)
+    emailjs.send('service_frbvtzh', 'template_2ngss4f')
         .then(() => {
             formMessage.textContent = 'Message sent successfully!';
             formMessage.className = 'form-message success';
