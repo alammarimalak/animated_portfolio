@@ -121,14 +121,11 @@
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    const now = new Date();
-    const time = now.toLocaleString();
 
     const data = {
         name: name,
         email: email,
         message: message,
-        time: time
     };
 
     emailjs.send('service_frbvtzh', 'template_25fhftz', data)
