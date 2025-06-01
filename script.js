@@ -138,6 +138,7 @@
         formMessage.style.display = 'block';
         document.getElementById('contactForm').reset();
         })
+        
         .catch(() => {
         formMessage.textContent = 'Failed to send message. Please try again.';
         formMessage.className = 'form-message error';
