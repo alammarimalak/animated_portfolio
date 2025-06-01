@@ -131,14 +131,14 @@
         time: time
     };
 
-    emailjs.send('service_frbvtzh', 'template_2ngss4f', data)
+    emailjs.send('service_frbvtzh', 'template_25fhftz', data)
         .then(() => {
         formMessage.textContent = 'Message sent successfully!';
         formMessage.className = 'form-message success';
         formMessage.style.display = 'block';
         document.getElementById('contactForm').reset();
         })
-        
+
         .catch(() => {
         formMessage.textContent = 'Failed to send message. Please try again.';
         formMessage.className = 'form-message error';
