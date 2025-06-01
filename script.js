@@ -108,7 +108,7 @@
         });
         
         window.addEventListener('scroll', animateOnScroll);
-    /*
+    
     emailjs.init('rFsbJOc1vcQxzVMpa');
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -129,4 +129,4 @@
             formMessage.className = 'form-message error';
             formMessage.style.display = 'block';
         });
-});*/
+});
