@@ -113,20 +113,34 @@
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     const formMessage = document.getElementById('formMessage');
     formMessage.style.display = 'none';
-    
-    emailjs.send('service_frbvtzh', 'template_2ngss4f')
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const now = new Date();
+    const time = now.toLocaleString();
+
+    const data = {
+        name: name,
+        email: email,
+        message: message,
+        time: time
+    };
+
+    emailjs.send('service_frbvtzh', 'template_2ngss4f', data)
         .then(() => {
-            formMessage.textContent = 'Message sent successfully!';
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
-            this.reset();
+        formMessage.textContent = 'Message sent successfully!';
+        formMessage.className = 'form-message success';
+        formMessage.style.display = 'block';
+        document.getElementById('contactForm').reset();
         })
         .catch(() => {
-            formMessage.textContent = 'Failed to send message. Please try again.';
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
+        formMessage.textContent = 'Failed to send message. Please try again.';
+        formMessage.className = 'form-message error';
+        formMessage.style.display = 'block';
         });
-});
+    });
