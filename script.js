@@ -20,6 +20,16 @@ mobileNavToggle.style.cursor = 'pointer';
 mobileNavToggle.style.display = 'none';
 document.body.appendChild(mobileNavToggle);
 
+
+mobileNavToggle.addEventListener('click', () => {
+    sideNavbar.classList.toggle('active');
+    if (sideNavbar.classList.contains('active')) {
+        mainContent.style.transform = 'translateX(-350px)';
+    } else {
+        mainContent.style.transform = 'translateX(0)';
+    }
+});
+*/
 navTrigger.addEventListener('mouseenter', () => {
     if (window.innerWidth > 768) {
         sideNavbar.classList.add('active');
@@ -32,15 +42,6 @@ closeNav.addEventListener('click', () => {
     mainContent.style.transform = 'translateX(0)';
 });
 
-mobileNavToggle.addEventListener('click', () => {
-    sideNavbar.classList.toggle('active');
-    if (sideNavbar.classList.contains('active')) {
-        mainContent.style.transform = 'translateX(-350px)';
-    } else {
-        mainContent.style.transform = 'translateX(0)';
-    }
-});
-*/
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
