@@ -109,32 +109,31 @@
         
         window.addEventListener('scroll', animateOnScroll);
     
-    function sendEmail() {
-        const formMessage = document.getElementById('formMessage');
-        formMessage.style.display = 'none';
+    const btn = document.getElementById('button');
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const subject = document.getElementById("subject").value;
-        const message = document.getElementById("message").value;
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        const data = {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message,
-        };
+            btn.value = 'Sending...';
 
-        emailjs.send('service_frbvtzh', 'template_25fhftz', data)
-            .then(() => {
-                formMessage.textContent = 'Message sent successfully!';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
-                document.getElementById('contactForm').reset();
-            })
-            .catch(() => {
-                formMessage.textContent = 'Failed to send message. Please try again.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-            });
-    }
+            const serviceID = 'service_frbvtzh';
+            const templateID = 'template_25fhftz';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Send Email';
+                    const formMessage = document.getElementById('formMessage');
+                    formMessage.textContent = 'Message sent successfully!';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    document.getElementById('contactForm').reset();
+
+                }, (err) => {
+                    btn.value = 'Send Email';
+                    const formMessage = document.getElementById('formMessage');
+                    formMessage.textContent = 'Failed to send message. Please try again.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                    
+                });
+        });

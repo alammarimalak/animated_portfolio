@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malak Al Ammari</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("rFsbJOc1vcQxzVMpa");
-        })();
-
-    </script>
     <link href="styles.css" rel="stylesheet">
 <body>
     <div class="floating-element"></div>
@@ -216,7 +209,7 @@ digital solutions. I thrive on innovation, teamwork, and continuous learning, al
                     <label for="message" class="form-label">Message</label>
                     <textarea id="message" name="message" class="form-textarea" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn" onclick="sendEmail()">Submit message</button>
+                <button type="submit" class="submit-btn">Submit message</button>
             </form>
         </section>
         
@@ -225,6 +218,9 @@ digital solutions. I thrive on innovation, teamwork, and continuous learning, al
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('rFsbJOc1vcQxzVMpa')
+    </script>
     <script src="script.js"></script>   
 
 </body>
