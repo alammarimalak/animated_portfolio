@@ -592,7 +592,7 @@
                 width: 280px;
             }
         }
-
+/*
         @media (min-width: 769px) {
             #mobileNavToggle {
                 display: none !important;
@@ -616,4 +616,4 @@
             .main-content {
                 transition: transform 0.3s ease !important;
             }
-        }
+        }*/
