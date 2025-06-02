@@ -6,6 +6,12 @@
     <title>Malak Al Ammari</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("rFsbJOc1vcQxzVMpa");
+        })();
+
+    </script>
     <link href="styles.css" rel="stylesheet">
 <body>
     <div class="floating-element"></div>
@@ -71,7 +77,7 @@ digital solutions. I thrive on innovation, teamwork, and continuous learning, al
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">EtuAide Maroc</h3>
-                        <p class="project-description">Interactive data visualization dashboard with real-time updates and custom charts.</p>
+                        <p class="project-description">A platform where students have the ability to write down their feedback anonymously about their universities and superior institutions</p>
                         <div class="project-tech">
                             <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">JavaScript</span>
@@ -91,7 +97,9 @@ digital solutions. I thrive on innovation, teamwork, and continuous learning, al
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">SafeSpaceShop</h3>
-                        <p class="project-description">Full-featured online store with product filtering, cart system, and secure checkout.</p>
+                        <p class="project-description">
+                            Full-featured online store with product filtering, cart system, secure checkout, and an admin side to manage products, categories, promotions, sales, and orders.
+                        </p>
                         <div class="project-tech">
                             <span class="tech-tag">Bootstrap 5</span>
                             <span class="tech-tag">PHP</span>
@@ -201,14 +209,17 @@ digital solutions. I thrive on innovation, teamwork, and continuous learning, al
                     <input type="email" id="email" name="email" class="form-input" required>
                 </div>
                 <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-input" required>
+                </div>
+                <div class="form-group">
                     <label for="message" class="form-label">Message</label>
                     <textarea id="message" name="message" class="form-textarea" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Submit message</button>
+                <button type="submit" class="submit-btn" onclick="sendEmail()">Submit message</button>
             </form>
         </section>
         
-        <!-- Footer -->
         <footer>
             <p class="footer-text">&copy;<span id="currentYear"></span> Malak Al Ammari. All rights reserved.</p>
         </footer>
