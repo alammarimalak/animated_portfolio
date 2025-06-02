@@ -5,7 +5,7 @@ const mainContent = document.getElementById('mainContent');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Mobile Navigation Toggle
-const mobileNavToggle = document.createElement('button');
+/*const mobileNavToggle = document.createElement('button');
 mobileNavToggle.innerHTML = '☰';
 mobileNavToggle.id = 'mobileNavToggle';
 mobileNavToggle.style.position = 'fixed';
@@ -40,7 +40,7 @@ mobileNavToggle.addEventListener('click', () => {
         mainContent.style.transform = 'translateX(0)';
     }
 });
-
+*/
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
