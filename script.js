@@ -124,7 +124,7 @@
 
     const data = {
         name: name,
-        email: email,
+        time: email,
         message: message,
     };
 
