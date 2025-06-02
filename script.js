@@ -109,7 +109,7 @@
         
         window.addEventListener('scroll', animateOnScroll);
     
-    const btn = document.getElementById('button');
+    const btn = document.querySelector('.submit-btn');
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -127,6 +127,7 @@
                     formMessage.className = 'form-message success';
                     formMessage.style.display = 'block';
                     document.getElementById('contactForm').reset();
+                    console.log('EmailJS initialized')
 
                 }, (err) => {
                     btn.value = 'Send Email';
@@ -134,6 +135,7 @@
                     formMessage.textContent = 'Failed to send message. Please try again.';
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
-                    
+                    console.error('EmailJS init error:', err)
+
                 });
         });
